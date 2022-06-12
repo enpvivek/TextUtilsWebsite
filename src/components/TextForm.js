@@ -9,10 +9,12 @@ export default function TextForm(props) {
   const handleToUp = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Uppercase", "success");
   };
   const handleToLow = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lowercase", "success");
   };
   const handleRmSpaces = () => {
     let arr = text.split(" ");
@@ -21,6 +23,7 @@ export default function TextForm(props) {
       noSpace = noSpace + arr[i];
     }
     setText(noSpace);
+    props.showAlert("Removed Spaces", "success");
   };
   const handleClearText = () => {
     let newText = "";
@@ -41,6 +44,7 @@ export default function TextForm(props) {
       newText += text[i].charCodeAt(0).toString(2) + " ";
     }
     setText(newText);
+    props.showAlert("Converted to Binary", "success");
   };
 
   //const handleCopyText ={() => {navigator.clipboard.writeText(this.state.textToCopy)}}
@@ -100,7 +104,7 @@ export default function TextForm(props) {
             className="btn  btn-primary  my-3"
             onClick={() => {
               navigator.clipboard.writeText(text);
-              window.alert("Copied to Clipboard");
+              props.showAlert("Copied to Clipboard", "success");
             }}
           >
             COPY TO CLIPBOARD

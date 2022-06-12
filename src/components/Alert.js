@@ -1,15 +1,15 @@
 import React from "react";
 
-export default function Alert() {
+export default function Alert(props) {
   return (
-    <>
+    props.alert && (
       <div className="container pt-5 px-5">
         <div
-          className="alert alert-warning alert-dismissible fade show"
+          className={`alert alert-${props.alert.type} alert-dismissible fade show`}
           role="alert"
         >
-          <strong>Holy guacamole!</strong> You should check in on some of those
-          fields below
+          <strong>{props.alert.type.toUpperCase()}</strong> :
+          {props.alert.message}
           <button
             type="button"
             className="btn-close"
@@ -18,6 +18,6 @@ export default function Alert() {
           ></button>
         </div>
       </div>
-    </>
+    )
   );
 }
