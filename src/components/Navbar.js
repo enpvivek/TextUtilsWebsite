@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 export default function Navbar(props) {
   return (
-    <div className="container">
-      <nav className="navbar navbar-expand-lg bg-light">
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary px-3">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             {props.title}
@@ -52,7 +52,7 @@ export default function Navbar(props) {
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 }
 Navbar.propTypes = { title: PropTypes.string };

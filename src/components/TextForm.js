@@ -49,7 +49,7 @@ export default function TextForm(props) {
   return (
     <>
       <div className="container ">
-        <div className="mt-1 p-5">
+        <div className="mt-1 pt-4 px-5">
           <label htmlFor="exampleFormControlTextarea1" className="form-label">
             <h1> {props.heading} </h1>
           </label>
@@ -84,7 +84,7 @@ export default function TextForm(props) {
       </div>
 
       <div className="container">
-        <div className="mb-5 px-5">
+        <div className="mb-5 pt-5 px-5">
           <h1>YOUR TEXT SUMMARY</h1>
           <div className="border border-2 rounded h5 p-2 ">
             {text.split(" ").length} words and {text.length} characters
